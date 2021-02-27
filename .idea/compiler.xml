@@ -10,6 +10,7 @@
         <module name="SpringMVC-02-hellomvc" />
         <module name="SpringMVC-03-annotation" />
         <module name="SpringMVC-04-controller" />
+        <module name="SpringMVC-05-json" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -18,6 +19,7 @@
       <module name="SpringMVC-02-hellomvc" target="1.5" />
       <module name="SpringMVC-03-annotation" target="1.5" />
       <module name="SpringMVC-04-controller" target="1.5" />
+      <module name="SpringMVC-05-json" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

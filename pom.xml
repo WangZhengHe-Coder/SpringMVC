@@ -13,6 +13,7 @@
         <module>SpringMVC-02-hellomvc</module>
         <module>SpringMVC-03-annotation</module>
         <module>SpringMVC-04-controller</module>
+        <module>SpringMVC-05-json</module>
     </modules>
 
 
