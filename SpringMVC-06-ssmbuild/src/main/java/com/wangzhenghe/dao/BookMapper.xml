@@ -6,4 +6,21 @@
     <insert id="addBook" parameterType="Books">
         INSERT INTO books(bookName, bookCounts, detail) VALUES(#{bookName},#{bookCounts}, #{detail})
     </insert>
+
+    <select id="queryBookById">
+        SELECT * FROM books WHERE bookID={#bookID}
+    </select>
+
+    <update id="updateBook" parameterType="Books">
+        UPDATE books
+        set bookName = #{bookName},bookCounts = #{bookCounts},detail = #{detail} where bookID = #{bookID}
+    </update>
+
+    <select id="queryBook">
+        SELECT * FROM books
+    </select>
+
+    <delete id="deleteBookById">
+        DELETE FROM books WHERE bookID=#{bookID}
+    </delete>
 </mapper>
