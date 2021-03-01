@@ -16,7 +16,7 @@
         set bookName = #{bookName},bookCounts = #{bookCounts},detail = #{detail} where bookID = #{bookID}
     </update>
 
-    <select id="queryBook">
+    <select id="queryBook" resultType="Books">
         SELECT * FROM books
     </select>
 

@@ -20,45 +20,44 @@ public class BookController {
     private BookService bookService;
 
     @RequestMapping("/allBook")
-    public String list(Model model){
+    public String list(Model model) {
         List<Books> list = bookService.queryBook();
-        model.addAttribute("list",list);
+        model.addAttribute("list", list);
         return "allBook";
     }
-
-    @RequestMapping("/toAddBook")
-    public String AddBook(){
-        return "addBook";
-    }
-
-    @RequestMapping("/AddBook")
-    public String addBook(Books books){
-        System.out.println(books);
-        bookService.addBook(books);
-        return "redirect:/book/allbook";
-    }
-
-    @RequestMapping("/toUpdateBook")
-    public String toUpdateBook(Model model,int id){
-        Books books = bookService.queryBookById(id);
-        System.out.println(books);
-        model.addAttribute("book",books);
-        return "updateBook";
-    }
-
-    @RequestMapping("/updateBook")
-    public String updateBook(Model model,Books book){
-        System.out.println(book);
-        bookService.updateBook(book);
-        Books books = bookService.queryBookById(book.getBookID());
-
-        model.addAttribute("books",books);
-        return "redirect:/book/allBook";
-    }
-
-    @RequestMapping("/del/{bookId}")
-    public String deleteBook(@PathVariable("bookId")int id){
-        bookService.deleteBookById(id);
-        return "redirect:/book/allBook";
-    }
+//    @RequestMapping("/toAddBook")
+//    public String AddBook(){
+//        return "addBook";
+//    }
+//
+//    @RequestMapping("/AddBook")
+//    public String addBook(Books books){
+//        System.out.println(books);
+//        bookService.addBook(books);
+//        return "redirect:/book/allbook";
+//    }
+//
+//    @RequestMapping("/toUpdateBook")
+//    public String toUpdateBook(Model model,int id){
+//        Books books = bookService.queryBookById(id);
+//        System.out.println(books);
+//        model.addAttribute("book",books);
+//        return "updateBook";
+//    }
+//
+//    @RequestMapping("/updateBook")
+//    public String updateBook(Model model,Books book){
+//        System.out.println(book);
+//        bookService.updateBook(book);
+//        Books books = bookService.queryBookById(book.getBookID());
+//
+//        model.addAttribute("books",books);
+//        return "redirect:/book/allBook";
+//    }
+//
+//    @RequestMapping("/del/{bookId}")
+//    public String deleteBook(@PathVariable("bookId")int id){
+//        bookService.deleteBookById(id);
+//        return "redirect:/book/allBook";
+//    }
 }

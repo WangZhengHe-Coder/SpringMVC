@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: h6410
@@ -13,22 +14,24 @@
     <%--引入 Bootstrap--%>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="container">
         <div class="row clearfix">
-            <div class="col-md-12 column"
+            <div class="col-md-12 column">
                  <div class="page-header">
                      <h1>
                          <small>书籍列表 —— 显示所有书籍</small>
                      </h1>
                  </div>
+            </div>
         </div>
-    </div>
-<div class="row">
-    <div class="col-md-4 column">
-        <a class="btn btn-primary" href="${pageContext.request.contextPath}/book/toAddBook">新增</a>
-    </div>
-</div>
+
+        <div class="row">
+            <div class="col-md-4 column">
+                <a class="btn btn-primary" href="${pageContext.request.contextPath}/book/toAddBook">新增</a>
+            </div>
+        </div>
     <div class="row clearfix">
         <div class="col-md-12 column">
             <table class="table table-hover table-striped">
@@ -42,7 +45,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="book" items="${requestScope.get('list')}">
+                <c:forEach var="book"
+                           items="${requestScope.get('list')}">
                     <tr>
                         <td>${book.getBookID()}</td>
                         <td>${book.getBookName()}</td>
